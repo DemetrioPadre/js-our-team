@@ -1,7 +1,4 @@
-
-const container = document.querySelector('.container');
-
-
+const rowCard = document.getElementById('rowCard');
 
 const team = [
   {
@@ -39,23 +36,17 @@ const team = [
 // console.log(team[5].name);
 
 
-for (persona of team) {
-  console.log(persona.name, persona.role, persona.image);
-
-
-  const cardElement = document.createElement('div');
-  cardElement.classList.add('card');
-  cardElement.innerHTML = '<h2>' + persona.name + '' + persona.role + '' + '' + persona.image + '' + '</h2>';
-  cardElement.innerHTML = `<img src="./img/${persona.image}" alt=""></img>`;
-
-  container.append(cardElement);
-
-
-
+for (let persona of team) {
+  const contenitoreCard = `
+ <div class="col">
+ <div class="card">
+     <img src="./img/${persona.image}" class="card-img-top" alt="...">
+     <div class="card-body">
+         <h5 class="card-title">${persona.name}</h5>
+         <p class="card-text">${persona.role}</p>
+     </div>
+ </div>
+</div>
+ `;
+  rowCard.innerHTML += contenitoreCard;
 }
-
-
-
-
-
-
