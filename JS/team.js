@@ -1,3 +1,8 @@
+
+const container = document.querySelector('.container');
+
+
+
 const team = [
   {
     name: 'Wayne Barnett',
@@ -30,19 +35,25 @@ const team = [
     image: 'barbara-ramos-graphic-designer.jpg',
   },
 
-
 ];
-console.log(team[5].name);
+// console.log(team[5].name);
 
 
 for (persona of team) {
-  console.log(persona);
+  console.log(persona.name, persona.role, persona.image);
+
+
+  const cardElement = document.createElement('div');
+  cardElement.classList.add('box');
+  cardElement.innerHTML = '<h2>' + persona.name + '' + persona.role + '' + '' + persona.image + '' + '</h2>';
+  container.append(cardElement);
+
+
+
 }
 
 
-for (let attribute in team) {
-  console.log(attribute, team[attribute]);
 
-}
+
 
 
