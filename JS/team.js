@@ -44,8 +44,10 @@ for (persona of team) {
 
 
   const cardElement = document.createElement('div');
-  cardElement.classList.add('box');
+  cardElement.classList.add('card');
   cardElement.innerHTML = '<h2>' + persona.name + '' + persona.role + '' + '' + persona.image + '' + '</h2>';
+  cardElement.innerHTML = `<img src="./img/${persona.image}" alt=""></img>`;
+
   container.append(cardElement);
 
 
